@@ -8,7 +8,7 @@ faveShows.forEach(function (arrayElement) {
 }
 
 var arrayLogger = function(arr) {
-    for(var i = 0; i < arr.length; i++) {
-        console.log(arr[i])
+    for (var i = 0; i < arr.length; i++) 
+    { console.log(arr[i])
     } console.log('*********')
 } 

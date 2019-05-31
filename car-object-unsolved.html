@@ -1,70 +1,96 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>My First Object</title>
-  </head>
-  <body>
 
-    <script>
+<head>
+  <meta charset="UTF-8">
+  <title>My First Object</title>
+</head>
 
-      var car = {
-        make: "Honda",
-        model: "Fit",
-        color: "Blue Raspberry",
-        mileage: 3000,
-        isWorking: true,
+<body>
+  <div>When A is pressed you will take a drive to work</div>
+  <script>
 
-        driveToWork: function() {
+    var car = {
+      make: "Honda",
+      model: "Fit",
+      color: "Blue Raspberry",
+      mileage: 3000,
+      isWorking: true,
 
-          alert("Old Mileage: " + this.mileage);
+      driveToWork: function () {
 
-          this.mileage = this.mileage + 8;
+        alert("Old Mileage: " + this.mileage);
 
-          alert("New mileage: " + this.mileage);
-        },
+        this.mileage = this.mileage + 8;
 
-        driveAroundWorld: function() {
+        alert("New mileage: " + this.mileage);
+      },
 
-          alert("Old Mileage: " + this.mileage);
+      driveAroundWorld: function () {
 
-          this.mileage = this.mileage + 24000;
+        alert("Old Mileage: " + this.mileage);
 
-          alert("New Mileage: " + this.mileage);
-          alert("Car needs a tuneup!");
+        this.mileage = this.mileage + 24000;
 
-          this.isWorking = false;
-        },
+        alert("New Mileage: " + this.mileage);
+        alert("Car needs a tuneup!");
 
-        getTuneUp: function() {
-          alert("Car is ready to go!");
-          this.isWorking = true;
-        },
+        this.isWorking = false;
+      },
 
-        honk: function() {
-          alert("Honk! Honk!");
-        }
-      };
+      getTuneUp: function () {
+        alert("Car is ready to go!");
+        this.isWorking = true;
+      },
+
+      honk: function () {
+        alert("Honk! Honk!");
+      }
+    };
 
 
-      // How would we log...
+    // // How would we log...
 
-      // The car's make?
-      console.log(car.make)
-      // The car's model?
-      console.log(car.model)
-      // The car's mileage?
-      console.log(car.mileage)
-      // How would we run the car's driveToWork method?
-      car.driveToWork(); //correct
-      console.log(car.driveToWork());
-      // How would we run the car's driveAroundWorld method?
-      car.driveAroundWorld();
-      console.log(car.driveAroundWorld());
-      // How would we run the getTuneUp method?
-      car.getTuneUp();
-      console.log(car.getTuneUp());
-    </script>
-    
-  </body>
+    // // The car's make?
+    // console.log(car.make)
+    // // The car's model?
+    // console.log(car.model)
+    // // The car's mileage?
+    // console.log(car.mileage)
+    // // How would we run the car's driveToWork method?
+    // car.driveToWork(); //correct
+    // console.log(car.driveToWork());
+    // // How would we run the car's driveAroundWorld method?
+    // car.driveAroundWorld();
+    // console.log(car.driveAroundWorld());
+    // // How would we run the getTuneUp method?
+    // car.getTuneUp();
+    // console.log(car).
+
+    document.onkeyup = function (x) {
+      if (x.key === "a") {
+        //if a is pressed the function with run
+        car.driveToWork();
+        reWriteStats();
+      } else if (x.key === "h") {
+        car.honk();
+        reWriteStats();
+      } else if (x.key === "d") {
+        car.driveAroundWorld();
+        reWriteStats();
+      } else if (x.key === "t") {
+        car.getTuneUp();
+        reWriteStats();
+      } else {
+        alert('please write a valid key')
+        return
+      }
+    }
+
+    var reWriteStats = function () {
+      console.log(car)
+    }
+  </script>
+</body>
+
 </html>
